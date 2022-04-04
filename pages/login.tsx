@@ -15,7 +15,7 @@ const LoginPage: NextPage = () => (
     <div className='w-full h-full flex-grow flex flex-wrap items-center justify-center'>
       <div className='w-full max-w-sm bg-transparent px-2'>
         <div className='w-full rounded-lg shadow-lg bg-white py-12 px-6'>
-          <h1 className='w-full text-3xl font-bold text-d-orange'>Login</h1>
+          <h1 className='w-full text-3xl font-bold text-sky-600'>Login</h1>
           <h1 className='w-full text-base font-normal text-slate-500 mt-2 mb-6'>Login with email and password</h1>
           <form
             className='w-full flex flex-wrap flex-col gap-y-4'

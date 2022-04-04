@@ -51,7 +51,7 @@ const DLink: FunctionComponent<DLinkProps> = ({
           {
             'bg-sky-800 text-sky-100 focus:ring-sky-500 active:ring-sky-500': theme === 'primary',
             'bg-sky-800 bg-opacity-20 text-sky-800 focus:ring-sky-500 active:ring-sky-500 hover:bg-opacity-30 hover:text-sky-100': theme === 'secondary',
-            'bg-d-orange text-sky-100 focus:ring-orange-400 active:ring-orange-400': theme === 'accent',
+            'bg-sky-600 text-sky-100 focus:ring-orange-400 active:ring-orange-400': theme === 'accent',
 
             'py-1.5 px-6 text-sm': theme !== '' && size === 'sm',
             'py-2 px-6 text-base': theme !== '' && size === 'base',

@@ -21,7 +21,7 @@
   }
 
   & > input {
-    @apply text-d-orange border-0 rounded focus:ring focus:ring-orange-400 
+    @apply text-sky-600 border-0 rounded focus:ring focus:ring-orange-400 
     bg-sky-600 focus:bg-sky-800 w-5 h-5 transition-all duration-300;
   }
 }
@@ -37,6 +37,6 @@
 .textArea {
   @apply w-full text-base font-medium text-sky-800 focus:text-slate-50 
       placeholder-sky-100 placeholder-opacity-70
-      border-0 rounded shadow-md focus:ring focus:ring-d-orange focus:ring-offset-2
+      border-0 rounded shadow-md focus:ring focus:ring-sky-600 focus:ring-offset-2
       bg-sky-600 focus:bg-sky-800 select-all transition-all duration-300;
 }

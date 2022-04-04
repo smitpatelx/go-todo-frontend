@@ -35,7 +35,7 @@ const DButton = forwardRef<HTMLButtonElement, DButtonProps>(({
         {
           'bg-sky-600 text-sky-100 focus:ring-cyan-500 focus-visible:ring-cyan-500 focus:ring-offset-cyan-900': theme === 'primary',
           'bg-sky-800 bg-opacity-20 text-sky-800 hover:text-sky-100 hover:bg-opacity-100 focus:ring-sky-500 focus-visible:ring-sky-500': theme === 'secondary',
-          'bg-d-orange text-sky-100 focus:ring-orange-400 focus-visible:ring-orange-400': theme === 'accent',
+          'bg-sky-600 text-sky-100 focus:ring-orange-400 focus-visible:ring-orange-400': theme === 'accent',
 
           'py-1.5 px-6 text-sm': size === 'sm',
           'py-2 px-6 text-base': size === 'base',

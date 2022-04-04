@@ -13,7 +13,7 @@ const DLoading: FunctionComponent = () => (
     )}
     >
       <div className='bg-transparent rounded-2xl text-center flex flex-wrap flex-col
-        items-center flip-horizontal-bottom text-2xl font-bold'
+        items-center flip-horizontal-bottom text-2xl font-bold text-slate-100'
       >
         Loading ...
       </div>
