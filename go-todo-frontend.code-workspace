@@ -1,0 +1,31 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "eslint.enable": true,
+    "eslint.alwaysShowStatus": true,
+    "eslint.format.enable": true,
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.organizeImports": false,
+    },
+    // "editor.formatOnSave": true
+    "restoreTerminals.terminals": [
+			{
+				"splitTerminals": [
+					{
+						"name": "yarn:dev",
+						"commands": [
+							"yarn dev"
+						]
+					},
+				]
+			},
+    ],
+    "eslint.lintTask.enable": true
+  },
+}

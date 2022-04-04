@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+      "ethansk.restore-terminals",
+      "editorconfig.editorconfig",
+      "dsznajder.es7-react-js-snippets",
+      "dbaeumer.vscode-eslint",
+      "hwencc.html-tag-wrapper",
+      "bradlc.vscode-tailwindcss",
+      "visualstudioexptteam.vscodeintellicode",
+      "formulahendry.auto-rename-tag",
+      "Compulim.compulim-vscode-closetag"
+  ]
+}

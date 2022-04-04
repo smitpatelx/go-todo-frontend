@@ -1,0 +1,42 @@
+.inputContainer {
+  @apply flex flex-wrap flex-col gap-y-2;
+
+  & > label {
+    @apply text-sm font-semibold text-slate-200 cursor-pointer select-none;
+  }
+
+  input {
+    @apply w-full text-base font-semibold text-white focus:text-slate-50 
+      placeholder-sky-300 focus:ring-offset-cyan-900
+      border-0 rounded-lg shadow-md focus:ring focus:ring-cyan-500 focus:ring-offset-2
+      bg-sky-600 focus:bg-sky-800 select-all transition-all duration-300;
+  }
+}
+
+.checkboxContainer {
+  @apply flex flex-wrap items-center gap-x-3.5 mt-2;
+
+  & > label {
+    @apply text-sm font-semibold text-slate-700 cursor-pointer leading-4 select-none;
+  }
+
+  & > input {
+    @apply text-d-orange border-0 rounded focus:ring focus:ring-orange-400 
+    bg-sky-600 focus:bg-sky-800 w-5 h-5 transition-all duration-300;
+  }
+}
+
+.error {
+  @apply text-red-500 text-sm font-normal cursor-not-allowed select-all py-1;
+
+  &::before {
+    content: '- ';
+  }
+}
+
+.textArea {
+  @apply w-full text-base font-medium text-sky-800 focus:text-slate-50 
+      placeholder-sky-100 placeholder-opacity-70
+      border-0 rounded shadow-md focus:ring focus:ring-d-orange focus:ring-offset-2
+      bg-sky-600 focus:bg-sky-800 select-all transition-all duration-300;
+}

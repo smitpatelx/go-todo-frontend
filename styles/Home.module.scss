@@ -1,0 +1,11 @@
+.bgImage {
+  background-image: url('/images/bg-blured.jpg');
+  background-color: rgb(224 251 252);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
+  @media (min-width: 640px) {
+    background-image: url('/images/bg-blured.jpg');
+  }
+}

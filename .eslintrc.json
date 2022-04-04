@@ -1,0 +1,64 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
+  "root": true,
+  "rules": {
+    "import/no-unresolved": "error",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function"
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/button-has-type": "off",
+    "react/jsx-sort-props": "error",
+    "jsx-quotes": ["error", "prefer-single"]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": "."
+      },
+      "alias": {
+        "map": [
+          [
+            "@/*",
+            "./*"
+          ]
+        ]
+      }
+    },
+    "@typescript-eslint/parser": [
+      ".ts",
+      ".tsx"
+    ]
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": [
+      "./tsconfig.json"
+    ]
+  }
+}
