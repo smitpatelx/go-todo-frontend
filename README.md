@@ -1,12 +1,4 @@
-# Mufflr
-- Dependency: `React, Nextjs, TailwindCss, Formik`
-
-
-## Things to de before starting
-- Install VS-CODE plugins for the project
-  + EditorConfig
-  + Tailwind CSS IntelliSense
-
+# GoTodo
 
 ## Start
 - Clone the project
