@@ -1,4 +1,4 @@
-import { forwardRef, ReactChild } from 'react';
+import { forwardRef, MouseEventHandler, ReactChild } from 'react';
 import ClassNames from 'classnames';
 
 type DButtonProps = {
@@ -8,7 +8,7 @@ type DButtonProps = {
   type?: 'button' | 'submit' | 'reset',
   title?: string,
   className?: string,
-  onClick?: () => void,
+  onClick?: MouseEventHandler<HTMLButtonElement>,
   disabled?: boolean,
 };
 
@@ -33,12 +33,12 @@ const DButton = forwardRef<HTMLButtonElement, DButtonProps>(({
           : ''),
         className,
         {
-          'bg-sky-600 text-sky-100 focus:ring-cyan-500 focus-visible:ring-cyan-500 focus:ring-offset-cyan-900': theme === 'primary',
-          'bg-sky-800 bg-opacity-20 text-sky-800 hover:text-sky-100 hover:bg-opacity-100 focus:ring-sky-500 focus-visible:ring-sky-500': theme === 'secondary',
-          'bg-sky-600 text-sky-100 focus:ring-orange-400 focus-visible:ring-orange-400': theme === 'accent',
+          'bg-sky-300 hover:bg-sky-300 focus:bg-sky-200 text-sky-800 focus:ring-cyan-500 focus-visible:ring-cyan-300 focus:ring-offset-cyan-500': theme === 'primary',
+          'bg-sky-800 hover:bg-sky-800 focus:bg-sky-700 text-sky-800 hover:text-sky-100 hover:bg-opacity-100 focus:ring-sky-500 focus-visible:ring-sky-500': theme === 'secondary',
+          'bg-sky-600 hover:bg-sky-600 focus:bg-sky-500 text-sky-100 focus:ring-sky-400 focus-visible:ring-sky-400 focus:ring-offset-cyan-900': theme === 'accent',
 
-          'py-1.5 px-6 text-sm': size === 'sm',
-          'py-2 px-6 text-base': size === 'base',
+          'py-1.5 px-3.5 text-sm': size === 'sm',
+          'py-2 px-4 text-base': size === 'base',
           'py-2.5 px-6 text-lg': size === 'lg',
 
           'cursor-pointer hover:bg-opacity-80 hover:text-opacity-80': !disabled,

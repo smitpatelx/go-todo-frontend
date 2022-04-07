@@ -6,7 +6,7 @@
   }
 
   input {
-    @apply w-full text-base font-semibold text-white focus:text-slate-50 
+    @apply w-full text-base font-normal text-white focus:text-slate-50 
       placeholder-sky-300 focus:ring-offset-cyan-900
       border-0 rounded-lg shadow-md focus:ring focus:ring-cyan-500 focus:ring-offset-2
       bg-sky-600 focus:bg-sky-800 select-all transition-all duration-300;

@@ -10,8 +10,8 @@ import style from '../styles/Home.module.scss';
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      refetchOnMount: false,
-      refetchOnWindowFocus: false,
+      refetchOnMount: true,
+      refetchOnWindowFocus: true,
     },
   },
 });
