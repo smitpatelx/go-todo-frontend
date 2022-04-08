@@ -11,7 +11,7 @@ body * {
 }
 
 body {
-  @apply p-0 m-0 flex flex-row w-full relative overflow-y-auto;
+  @apply p-0 m-0 flex flex-row w-full relative overflow-y-auto overflow-x-hidden;
   min-height: 100vh;
   min-height: -webkit-fill-available;
   max-height: 100vh;

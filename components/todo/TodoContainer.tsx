@@ -11,7 +11,7 @@ import {
   useQuery, useMutation, UseQueryResult,
 } from 'react-query';
 import TodoApi from '@/api/todo';
-import { filterObject, isEmptyObj } from '@/lib/misc';
+import classNames from 'classnames';
 import Layout from '../navigation/Layout';
 import DButton from '../generic/DButton';
 import DIcon from '../generic/DIcon';
@@ -23,10 +23,6 @@ export type Todo = {
   done: boolean,
   id: string,
   created_at: string
-};
-
-type TodoObjects = {
-  [id: string]: Todo
 };
 
 const TodoContainer: FunctionComponent = () => {
@@ -159,7 +155,11 @@ const TodoContainer: FunctionComponent = () => {
         rounded-lg shadow-xl my-auto p-4 md:p-6 h-full max-h-screen
         md:max-h-[90%] flex flex-col-reverse md:flex-col relative'
         >
-          <div className={style.inputContainer}>
+          <div className={classNames(
+            style.inputContainer,
+            'relative pt-2 md:py-2',
+          )}
+          >
             <div className='flex flex-wrap'>
               <div className='w-full flex flex-wrap relative'>
                 <input
@@ -188,51 +188,50 @@ const TodoContainer: FunctionComponent = () => {
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className='my-3 overflow-x-auto flex flex-wrap flex-col
-            overflow-y-hidden w-full scroll-hidden place-content-start'
-          >
-            <div className='mr-2'>
-              <DButton
-                className='hover:bg-red-400'
-                onClick={() => handleSelectAll()}
-                size='sm'
-                theme='accent'
-              >
-                <span>Select All</span>
-              </DButton>
-            </div>
-            <div className='mr-2'>
-              <DButton
-                className='hover:bg-red-400'
-                onClick={() => handleDeleteTodos(selectedTodos)}
-                size='sm'
-                theme='accent'
-              >
-                <span>Delete</span>
-                <DIcon className='w-4 h-4 ml-2' icon={mdiDelete} />
-              </DButton>
-            </div>
-            <div className='mr-2'>
-              <DButton
-                onClick={() => handleMarkAsDone(selectedTodos)}
-                size='sm'
-                theme='accent'
-              >
-                <span>Done</span>
-                <DIcon className='w-4 h-4 ml-2' icon={mdiCheck} />
-              </DButton>
-            </div>
-            <div className='mr-2'>
-              <DButton
-                onClick={() => handleMarkAsIncomplete(selectedTodos)}
-                size='sm'
-                theme='accent'
-              >
-                <span>Incomplete</span>
-                <DIcon className='w-4 h-4 ml-2' icon={mdiClose} />
-              </DButton>
+            <div className='overflow-x-auto flex flex-nowrap flex-row
+              overflow-y-hidden w-full scroll-hidden place-content-start p-2'
+            >
+              <div className='mr-2 flex-shrink-0'>
+                <DButton
+                  className='hover:bg-red-400'
+                  onClick={() => handleSelectAll()}
+                  size='sm'
+                  theme='accent'
+                >
+                  <span>Select All</span>
+                </DButton>
+              </div>
+              <div className='mr-2 flex-shrink-0'>
+                <DButton
+                  className='hover:bg-red-400'
+                  onClick={() => handleDeleteTodos(selectedTodos)}
+                  size='sm'
+                  theme='accent'
+                >
+                  <span>Delete</span>
+                  <DIcon className='w-4 h-4 ml-2' icon={mdiDelete} />
+                </DButton>
+              </div>
+              <div className='mr-2 flex-shrink-0'>
+                <DButton
+                  onClick={() => handleMarkAsDone(selectedTodos)}
+                  size='sm'
+                  theme='accent'
+                >
+                  <span>Done</span>
+                  <DIcon className='w-4 h-4 ml-2' icon={mdiCheck} />
+                </DButton>
+              </div>
+              <div className='mr-2 flex-shrink-0'>
+                <DButton
+                  onClick={() => handleMarkAsIncomplete(selectedTodos)}
+                  size='sm'
+                  theme='accent'
+                >
+                  <span>Incomplete</span>
+                  <DIcon className='w-4 h-4 ml-2' icon={mdiClose} />
+                </DButton>
+              </div>
             </div>
           </div>
 
