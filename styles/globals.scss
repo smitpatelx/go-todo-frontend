@@ -6,8 +6,26 @@ body * {
   @apply antialiased selection:bg-sky-700 selection:text-sky-100 caret-sky-500;
 }
 
-.h-w-fill {
-  height: -webkit-fill-available;
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS devices */
+  .h-w-fill {
+    height: -webkit-fill-available;
+  }
+  html {
+    @apply overflow-y-auto;
+    height: -webkit-fill-available;
+  }
+}
+
+@supports not (-webkit-touch-callout: none) {
+  /* CSS for other than iOS devices */
+  .h-w-fill {
+    height: 100vh;
+  }
+  html {
+    @apply overflow-y-auto;
+    height: 100vh;
+  }
 }
 
 body {
@@ -24,14 +42,6 @@ body {
 
   #__next {
     @apply flex-1;
-  }
-}
-
-html {
-  @apply h-w-fill overflow-y-auto;
-
-  @media (min-width: 640px) {
-    @apply h-full;
   }
 }
 
@@ -71,4 +81,11 @@ button {
     /* Hide scrollbar for Chrome, Safari and Opera */
     display: none;
   }
+}
+
+// To disable scroll on popup
+.disable-scroll {
+  overflow: hidden;
+  height: -webkit-fill-available !important;
+  width: 100vw !important;
 }
