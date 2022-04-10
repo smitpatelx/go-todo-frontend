@@ -12,14 +12,14 @@ const preloadedState: PreloadedState<StateFromReducersMapObject<typeof reducer>>
 const store = configureStore({
   reducer,
   devTools: process.env.NODE_ENV === 'development',
-  preloadedState,
+  // preloadedState,
 });
 
-store.subscribe(() => {
-  saveState({
-    auth: store.getState().auth,
-  });
-});
+// store.subscribe(() => {
+//   saveState({
+//     auth: store.getState().auth,
+//   });
+// });
 
 export type StoreStateType = StateFromReducersMapObject<typeof reducer>;
 export default store;

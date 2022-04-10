@@ -14,7 +14,7 @@ const authSlice = createSlice({
     ),
     userLogout: (state) => produce(
       state,
-      (draftState) => ({ ...draftState, user: {} as UserType }),
+      () => ({ user: {} }),
     ),
   },
 });

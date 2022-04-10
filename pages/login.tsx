@@ -6,7 +6,7 @@ import Layout from '../components/navigation/Layout';
 const LoginPage: NextPage = () => (
   <Layout>
     <Head>
-      <title>Mufflr | Login Page</title>
+      <title>Todo | Login Page</title>
     </Head>
 
     <div className='w-full h-full flex-grow flex flex-wrap items-center justify-center'>

@@ -1,7 +1,6 @@
 import {
   mdiCheck, mdiClose, mdiDelete, mdiPlus,
 } from '@mdi/js';
-import Head from 'next/head';
 import {
   FunctionComponent, KeyboardEventHandler, useMemo, useState,
 } from 'react';
@@ -145,9 +144,6 @@ const TodoContainer: FunctionComponent = () => {
 
   return (
     <Layout>
-      <Head>
-        <title>Go Todo</title>
-      </Head>
       <div className='w-full flex-grow flex flex-col items-center
        overflow-hidden p-2 md:p-0 flex-wrap justify-start'
       >
