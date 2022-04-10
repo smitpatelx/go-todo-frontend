@@ -22,23 +22,23 @@ const Header: FunctionComponent = () => {
         </div>
         <div className='flex flex-wrap gap-x-3 items-center justify-center'>
           {
-          isEmptyObj(userFromStore) && (
-          <DLink
-            activeClass={{
-              active: 'bg-slate-50 bg-opacity-10',
-              inactive: '',
-            }}
-            className='px-3 py-0.5 rounded-lg text-slate-50 font-medium
-              focus:bg-slate-900 focus:bg-opacity-20'
-            href='/login'
-            size=''
-            theme=''
-            title='Login'
-          >
-            Login
-          </DLink>
-          )
-        }
+            isEmptyObj(userFromStore) && (
+              <DLink
+                activeClass={{
+                  active: 'bg-slate-50 bg-opacity-10',
+                  inactive: '',
+                }}
+                className='px-3 py-0.5 rounded-lg text-slate-50 font-medium
+                  focus:bg-slate-900 focus:bg-opacity-20'
+                href='/login'
+                size=''
+                theme=''
+                title='Login'
+              >
+                Login
+              </DLink>
+            )
+          }
           {
           !isEmptyObj(userFromStore) && (
             <>
@@ -66,19 +66,18 @@ const Header: FunctionComponent = () => {
               >
                 Logout
               </DButton>
-              { userFromStore.avatarUrl && (
               <div
                 className='rounded-full bg-slate-50 shadow-lg overflow-hidden
-                  h-10 w-10'
+                h-10 w-10'
               >
                 <Image
+                  alt='User'
                   className='rounded-full bg-slate-50'
                   height={45}
                   src={userFromStore.avatarUrl}
                   width={45}
                 />
               </div>
-              )}
             </>
           )
         }
