@@ -5,7 +5,7 @@ import classNames from 'classnames';
 const DLoading: FunctionComponent = () => (
   <>
     <Head>
-      <title>Mufflr | Loading ...</title>
+      <title>Todo | Loading ...</title>
     </Head>
     <div className={classNames(
       'flex-1 w-full h-full flex flex-wrap items-center justify-center z-[100]',

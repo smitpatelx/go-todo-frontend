@@ -20,7 +20,7 @@ const queryClient = new QueryClient({
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <Provider store={store}>
     <QueryClientProvider client={queryClient}>
-      <div className={classNames(style.bgImage, 'h-w-fill')}>
+      <div className={classNames(style.bgImage, 'h-full')}>
         <div className='flex flex-wrap flex-col h-full'>
           <Header />
           <AnimatePresence

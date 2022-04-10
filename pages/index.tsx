@@ -11,7 +11,7 @@ const Home: NextPage = () => (
     <Head>
       <title>Todo | Home Page</title>
     </Head>
-    <div className='w-full h-full'>
+    <div className='w-full h-full flex-grow'>
       <div className='w-full h-full container mx-auto flex flex-col px-4 md:px-0 place-content-between'>
         <div className='w-full flex flex-col py-12'>
           <h1 className='text-6xl md:text-8xl font-bold text-slate-900'>
@@ -50,6 +50,7 @@ const Home: NextPage = () => (
 
         <div className='w-full flex-1 relative flex flex-wrap mt-8'>
           <Image
+            alt='Todo'
             className='w-full h-full'
             layout='fill'
             src='/images/illustration/home-art-1.svg'
