@@ -6,8 +6,8 @@
   }
 
   input {
-    @apply w-full text-base font-normal text-white focus:text-slate-50 
-      placeholder-sky-300 focus:ring-offset-cyan-900
+    @apply w-full text-base font-medium text-white focus:text-slate-50 
+      placeholder-sky-300 focus:ring-offset-cyan-300
       border-0 rounded-lg shadow-md focus:ring focus:ring-cyan-500 focus:ring-offset-2
       bg-sky-600 focus:bg-sky-800 select-all transition-all duration-300;
   }
@@ -17,12 +17,12 @@
   @apply flex flex-wrap items-center gap-x-3.5 mt-2;
 
   & > label {
-    @apply text-sm font-semibold text-slate-700 cursor-pointer leading-4 select-none;
+    @apply text-sm font-semibold text-slate-200 cursor-pointer leading-4 select-none;
   }
 
   & > input {
-    @apply text-sky-600 border-0 rounded focus:ring focus:ring-orange-400 
-    bg-sky-600 focus:bg-sky-800 w-5 h-5 transition-all duration-300;
+    @apply text-sky-600 border-0 rounded focus:ring focus:ring-cyan-500 
+    bg-sky-600 focus:bg-sky-800 w-5 h-5 transition-all duration-300 focus:ring-offset-cyan-300;
   }
 }
 

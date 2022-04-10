@@ -1,5 +1,4 @@
-import { mdiCheck, mdiClose } from '@mdi/js';
-import { spawn } from 'child_process';
+import { mdiCheck } from '@mdi/js';
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
 import DButton from '../generic/DButton';

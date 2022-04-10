@@ -28,12 +28,12 @@ const DLink: FunctionComponent<DLinkProps> = ({
   className,
   activeClass,
 }: DLinkProps) => {
-  const { pathname } = useRouter();
-  const [isActive, setIsActive] = useState(pathname === href);
+  const { asPath } = useRouter();
+  const [isActive, setIsActive] = useState(asPath === href);
 
   useEffect(() => {
-    setIsActive(pathname === href);
-  }, [href, pathname]);
+    setIsActive(asPath === href);
+  }, [href, asPath]);
 
   return (
     <Link
@@ -49,13 +49,13 @@ const DLink: FunctionComponent<DLinkProps> = ({
             : 'focus:outline-none flex flex-wrap items-center justify-center'),
           className,
           {
-            'bg-sky-800 text-sky-100 focus:ring-sky-500 active:ring-sky-500': theme === 'primary',
-            'bg-sky-800 bg-opacity-20 text-sky-800 focus:ring-sky-500 active:ring-sky-500 hover:bg-opacity-30 hover:text-sky-100': theme === 'secondary',
-            'bg-sky-600 text-sky-100 focus:ring-orange-400 active:ring-orange-400': theme === 'accent',
+            'bg-sky-800 text-sky-100 focus:ring-sky-500 focus-visible:ring-sky-300 focus:ring-offset-cyan-900': theme === 'primary',
+            'bg-sky-50 text-sky-800 hover:bg-opacity-100 focus:ring-sky-500 focus-visible:ring-sky-500 focus:ring-offset-cyan-900': theme === 'secondary',
+            'bg-sky-600 text-sky-100 focus:ring-sky-400 focus-visible:ring-sky-400 focus:ring-offset-cyan-900': theme === 'accent',
 
-            'py-1.5 px-6 text-sm': theme !== '' && size === 'sm',
-            'py-2 px-6 text-base': theme !== '' && size === 'base',
-            'py-2.5 px-6 text-lg': theme !== '' && size === 'lg',
+            'py-1.5 px-3.5 text-sm': size === 'sm',
+            'py-2 px-4 text-base': size === 'base',
+            'py-2.5 px-6 text-lg': size === 'lg',
 
             ...(activeClass?.active ? { [activeClass?.active]: isActive } : null),
             ...(activeClass?.inactive ? { [activeClass?.inactive]: !isActive } : null),

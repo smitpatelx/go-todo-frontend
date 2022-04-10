@@ -5,6 +5,7 @@ import '../styles/globals.scss';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import store from '@/store/store';
 import { Provider } from 'react-redux';
+import Header from '@/components/navigation/Header';
 import style from '../styles/Home.module.scss';
 
 const queryClient = new QueryClient({
@@ -19,8 +20,9 @@ const queryClient = new QueryClient({
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <Provider store={store}>
     <QueryClientProvider client={queryClient}>
-      <div className={classNames(style.bgImage, 'h-full')}>
+      <div className={classNames(style.bgImage, 'h-w-fill')}>
         <div className='flex flex-wrap flex-col h-full'>
+          <Header />
           <AnimatePresence
             exitBeforeEnter
             initial={false}

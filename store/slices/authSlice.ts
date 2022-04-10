@@ -1,39 +1,24 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import produce from 'immer';
-
-type User = {
-  user_type: string;
-  email: string;
-  createdAt: Date;
-  updatedAt: Date;
-  first_name: string;
-  last_name: string;
-};
-
-type Session = { sessionId: string };
+import UserType from '@/interface/user';
 
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    user: {} as User,
-    sessionId: '',
+    user: {} as UserType,
   },
   reducers: {
-    userLogin: (state, action: PayloadAction<{ user: User }>) => produce(
+    setUser: (state, action: PayloadAction<{ user: UserType }>) => produce(
       state,
       (draftState) => ({ ...draftState, user: action.payload.user }),
     ),
     userLogout: (state) => produce(
       state,
-      (draftState) => ({ ...draftState, user: {} as User }),
-    ),
-    createSession: (state, action: PayloadAction<Session>) => produce(
-      state,
-      (draftState) => ({ ...draftState, sessionId: action.payload.sessionId }),
+      (draftState) => ({ ...draftState, user: {} as UserType }),
     ),
   },
 });
 
-export const { userLogin, userLogout, createSession } = authSlice.actions;
+export const { setUser, userLogout } = authSlice.actions;
 export type AuthSliceType = typeof authSlice;
 export default authSlice.reducer;

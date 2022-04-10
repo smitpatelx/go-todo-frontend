@@ -1,10 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { mdiLogin } from '@mdi/js';
+import AuthPopup from '@/components/auth/AuthPopup';
 import Layout from '../components/navigation/Layout';
-import DButton from '../components/generic/DButton';
-import DIcon from '../components/generic/DIcon';
-import style from '../styles/Forms.module.scss';
 
 const LoginPage: NextPage = () => (
   <Layout>
@@ -14,9 +11,16 @@ const LoginPage: NextPage = () => (
 
     <div className='w-full h-full flex-grow flex flex-wrap items-center justify-center'>
       <div className='w-full max-w-sm bg-transparent px-2'>
-        <div className='w-full rounded-lg shadow-lg bg-white py-12 px-6'>
-          <h1 className='w-full text-3xl font-bold text-sky-600'>Login</h1>
-          <h1 className='w-full text-base font-normal text-slate-500 mt-2 mb-6'>Login with email and password</h1>
+        <div className='w-full rounded-lg shadow-xl bg-sky-800 py-12 px-6'>
+          <h1 className='w-full text-3xl text-center font-bold text-sky-500'>Login</h1>
+
+          <div className='w-full py-3 flex items-center justify-center'>
+            <AuthPopup provider='google' />
+          </div>
+
+          {/* <h1 className='w-full text-sm text-center font-semibold text-slate-50 my-2'>OR</h1>
+          <h1 className='w-full text-base text-center font-normal text-slate-50
+            mt-2 mb-6'>Login with email and password</h1>
           <form
             className='w-full flex flex-wrap flex-col gap-y-4'
             onSubmit={(e) => e.preventDefault()}
@@ -27,7 +31,8 @@ const LoginPage: NextPage = () => (
             </div>
             <div className={style.inputContainer}>
               <label htmlFor='password'>Password</label>
-              <input autoComplete='current-password' id='password' placeholder='Password' type='password' />
+              <input autoComplete='current-password' id='password'
+              placeholder='Password' type='password' />
             </div>
             <div className={style.checkboxContainer}>
               <input id='terms-and-conditions' type='checkbox' />
@@ -42,11 +47,10 @@ const LoginPage: NextPage = () => (
                 <DIcon className='w-5 h-5 ml-2' icon={mdiLogin} />
               </DButton>
             </div>
-          </form>
+          </form> */}
         </div>
       </div>
     </div>
   </Layout>
 );
-
 export default LoginPage;
