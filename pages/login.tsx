@@ -1,7 +1,11 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import AuthPopup from '@/components/auth/AuthPopup';
+import DIcon from '@/components/generic/DIcon';
+import DLink from '@/components/generic/DLink';
+import { mdiGoogle } from '@mdi/js';
 import Layout from '../components/navigation/Layout';
+
+const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || '';
 
 const LoginPage: NextPage = () => (
   <Layout>
@@ -15,39 +19,19 @@ const LoginPage: NextPage = () => (
           <h1 className='w-full text-3xl text-center font-bold text-sky-500'>Login</h1>
 
           <div className='w-full py-3 flex items-center justify-center'>
-            <AuthPopup provider='google' />
+            <DLink
+              href={`${backendUrl}/auth/login/google`}
+              size='base'
+              theme='accent'
+              title='login'
+            >
+              <DIcon
+                className='w-5 h-5 mr-2 text-yellow-500'
+                icon={mdiGoogle}
+              />
+              Login with Google
+            </DLink>
           </div>
-
-          {/* <h1 className='w-full text-sm text-center font-semibold text-slate-50 my-2'>OR</h1>
-          <h1 className='w-full text-base text-center font-normal text-slate-50
-            mt-2 mb-6'>Login with email and password</h1>
-          <form
-            className='w-full flex flex-wrap flex-col gap-y-4'
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <div className={style.inputContainer}>
-              <label htmlFor='email'>Email</label>
-              <input autoComplete='user-name' id='email' placeholder='Email Address' type='email' />
-            </div>
-            <div className={style.inputContainer}>
-              <label htmlFor='password'>Password</label>
-              <input autoComplete='current-password' id='password'
-              placeholder='Password' type='password' />
-            </div>
-            <div className={style.checkboxContainer}>
-              <input id='terms-and-conditions' type='checkbox' />
-              <label htmlFor='terms-and-conditions'>Terms and Conditions</label>
-            </div>
-            <div className='mt-6 flex flex-wrap items-end justify-between'>
-              <DButton theme='secondary' type='reset'>
-                Reset
-              </DButton>
-              <DButton theme='accent' type='submit'>
-                Login
-                <DIcon className='w-5 h-5 ml-2' icon={mdiLogin} />
-              </DButton>
-            </div>
-          </form> */}
         </div>
       </div>
     </div>
