@@ -20,6 +20,11 @@ const routes: Route[] = [
     pathname: '/',
     auth: '',
   },
+  {
+    name: 'test',
+    pathname: '/test/',
+    auth: '',
+  },
 ];
 
 export default routes;

@@ -1,5 +1,6 @@
 import { Popover, Transition } from '@headlessui/react';
 import { mdiHome, mdiLogout, mdiViewDashboard } from '@mdi/js';
+import classNames from 'classnames';
 import Image from 'next/image';
 import DButton from '../generic/DButton';
 import DIcon from '../generic/DIcon';
@@ -8,11 +9,20 @@ import DLink from '../generic/DLink';
 type HeaderMenuProps = {
   avatarUrl: string,
   logout: () => void,
+  maxWidthClass?: string,
+  left?: boolean,
+};
+
+const defaultProps = {
+  maxWidthClass: 'max-w-screen',
+  left: false,
 };
 
 const HeaderMenu = ({
   avatarUrl,
   logout,
+  maxWidthClass,
+  left,
 }: HeaderMenuProps) => {
   const solutions = [
     {
@@ -36,7 +46,9 @@ const HeaderMenu = ({
   ];
   return (
     <Popover className='relative'>
-      <Popover.Button className='pointer-events-auto'>
+      <Popover.Button
+        className='pointer-events-auto'
+      >
         <div
           className='rounded-full bg-slate-50 shadow-lg overflow-hidden
               h-9 w-9 pointer-events-none'
@@ -53,7 +65,14 @@ const HeaderMenu = ({
       </Popover.Button>
       <Transition
         as='div'
-        className='w-screen max-w-screen px-4 fixed bottom-3 right-0 shadow-lg'
+        className={classNames(
+          'w-full px-4 absolute bottom-3 shadow-lg',
+          maxWidthClass,
+          {
+            'left-0': left,
+            'right-0': !left,
+          },
+        )}
         enter='transition ease-out duration-200'
         enterFrom='opacity-0 translate-y-1'
         enterTo='opacity-100 translate-y-0'
@@ -61,7 +80,7 @@ const HeaderMenu = ({
         leaveFrom='opacity-100 translate-y-0'
         leaveTo='opacity-0 translate-y-1'
       >
-        <Popover.Panel className='absolute z-10 w-screen mt-3 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl'>
+        <div className='absolute z-10 w-full mt-3 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl'>
           <div className='overflow-hidden shadow-lg ring-1 ring-black ring-opacity-5'>
             <div className='relative flex flex-col gap-8 bg-white p-7 items-stretch'>
               {solutions.map((item) => {
@@ -119,10 +138,12 @@ const HeaderMenu = ({
               </a>
             </div>
           </div>
-        </Popover.Panel>
+        </div>
       </Transition>
     </Popover>
   );
 };
+
+HeaderMenu.defaultProps = defaultProps;
 
 export default HeaderMenu;
