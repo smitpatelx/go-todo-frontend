@@ -40,11 +40,11 @@ const HeaderMenu = ({
         <Popover.Button>
           <div
             className='rounded-full bg-slate-50 shadow-lg overflow-hidden
-              h-9 w-9'
+              h-9 w-9 pointer-events-none'
           >
             <Image
               alt='User'
-              className='rounded-full bg-slate-50'
+              className='rounded-full bg-slate-50 pointer-events-none'
               height={45}
               layout='responsive'
               src={avatarUrl}
