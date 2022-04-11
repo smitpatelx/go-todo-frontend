@@ -144,7 +144,7 @@ const TodoContainer: FunctionComponent = () => {
 
   return (
     <Layout>
-      <div className='w-full flex-grow flex flex-col items-center
+      <div className='w-screen flex-grow flex flex-col items-center
        overflow-hidden p-2 md:p-0 flex-wrap justify-start'
       >
         <div className='w-full md:max-w-xl bg-sky-900 flex-grow

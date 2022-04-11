@@ -31,7 +31,7 @@ const Home: NextPage = () => (
               theme=''
               title='author'
             >
-              @smitpatelx
+              smitpatelx.com
             </DLink>
           </h3>
 

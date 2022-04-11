@@ -26,10 +26,10 @@ const DButton = forwardRef<HTMLButtonElement, DButtonProps>(({
     ref={ref}
     className={
       ClassNames(
-        'focus:outline-none flex flex-wrap items-center justify-center select-none',
+        'focus:outline-none flex flex-wrap items-center select-none',
         (theme !== ''
           ? `rounded-md shadow font-semibold transition-all duration-200 ease-out
-        focus-visible:ring focus:ring focus:ring-offset-2 focus-visible:ring-offset-2`
+        focus-visible:ring focus:ring focus:ring-offset-2 focus-visible:ring-offset-2 justify-center`
           : ''),
         className,
         {

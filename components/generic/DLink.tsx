@@ -9,7 +9,7 @@ type DLinkProps = {
   theme?: 'primary' | 'secondary' | 'accent' | '',
   size?: 'sm' | 'base' | 'lg' | '',
   href: string,
-  title: string,
+  title?: string,
   target?: '_blank' | '_self' | '_parent' | '_top', // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target
   activeClass?: {
     active: string,
@@ -46,7 +46,7 @@ const DLink: FunctionComponent<DLinkProps> = ({
             ? `focus:outline-none focus:ring rounded-md shadow font-semibold
           hover:bg-opacity-80 hover:text-opacity-80 transition-all duration-200
           ease-out focus:ring-offset-2 flex flex-wrap items-center justify-center`
-            : 'focus:outline-none flex flex-wrap items-center justify-center'),
+            : 'focus:outline-none flex flex-wrap items-center'),
           className,
           {
             'bg-sky-800 text-sky-100 focus:ring-sky-500 focus-visible:ring-sky-300 focus:ring-offset-cyan-900': theme === 'primary',
@@ -73,6 +73,7 @@ const DLink: FunctionComponent<DLinkProps> = ({
 
 DLink.defaultProps = {
   target: '_self',
+  title: '',
   theme: '',
   size: '',
   className: '',
