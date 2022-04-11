@@ -96,7 +96,7 @@ const Header: FunctionComponent = () => {
                   avatarUrl={avatarUrl}
                   left
                   logout={logOut.mutate}
-                  maxWidthClass='w-screen'
+                  maxWidthClass='w-screen -mr-4'
                 />
               </div>
             </div>
