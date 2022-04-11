@@ -92,7 +92,11 @@ const Header: FunctionComponent = () => {
                 </div>
               </div>
               <div className='flex md:hidden'>
-                <HeaderMenu avatarUrl={avatarUrl} logout={logOut.mutate} />
+                <HeaderMenu
+                  avatarUrl={avatarUrl}
+                  logout={logOut.mutate}
+                  maxWidthClass='w-screen'
+                />
               </div>
             </div>
           )

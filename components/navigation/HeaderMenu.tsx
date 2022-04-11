@@ -66,11 +66,11 @@ const HeaderMenu = ({
       <Transition
         as='div'
         className={classNames(
-          'w-full px-4 absolute bottom-3 shadow-lg',
+          'absolute bottom-0 transform translate-y-full shadow-lg',
           maxWidthClass,
           {
-            'left-0': left,
-            'right-0': !left,
+            'left-0': !left,
+            'right-0': left,
           },
         )}
         enter='transition ease-out duration-200'
@@ -80,7 +80,7 @@ const HeaderMenu = ({
         leaveFrom='opacity-100 translate-y-0'
         leaveTo='opacity-0 translate-y-1'
       >
-        <div className='absolute z-10 w-full mt-3 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl'>
+        <div className='w-full'>
           <div className='overflow-hidden shadow-lg ring-1 ring-black ring-opacity-5'>
             <div className='relative flex flex-col gap-8 bg-white p-7 items-stretch'>
               {solutions.map((item) => {
