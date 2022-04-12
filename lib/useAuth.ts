@@ -15,17 +15,20 @@ const useAuth = () => {
   const router = useRouter();
   const dispatch = useDispatch();
 
+  const handleLouOutCallback = () => {
+    dispatch(userLogout());
+    if (router.asPath === '/dashboard/') { return router.push('/login/'); }
+    return undefined;
+  };
+
   const logOut = useMutation(
     async () => {
       const res = await AuthApi.postLogout();
       return res;
     },
     {
-      onSettled: () => {
-        dispatch(userLogout());
-        if (router.asPath === '/dashboard/') { return router.push('/login/'); }
-        return undefined;
-      },
+      onSuccess: handleLouOutCallback,
+      onError: handleLouOutCallback,
     },
   );
 
