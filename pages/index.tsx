@@ -53,6 +53,7 @@ const Home: NextPage = () => (
             className='w-full h-full'
             layout='fill'
             objectFit='cover'
+            objectPosition='left'
             priority
             src='/images/bg-desktop.png'
           />
@@ -63,6 +64,7 @@ const Home: NextPage = () => (
             className='w-full h-full'
             layout='fill'
             objectFit='cover'
+            objectPosition='bottom'
             priority
             src='/images/bg-mobile.png'
           />
