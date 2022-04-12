@@ -17,7 +17,7 @@ const Header: FunctionComponent = () => {
   }, [userFromStore?.avatarUrl]);
 
   return (
-    <div className='w-full bg-slate-800 bg-opacity-40 backdrop-blur-lg z-50'>
+    <div className='w-full bg-slate-800 bg-opacity-40 backdrop-blur-lg z-50 fixed top-0 left-0'>
       <div className='w-full container mx-auto flex flex-wrap items-center justify-between px-4 md:px-0'>
         <div>
           <DLink href='/' title='Home'>
@@ -37,7 +37,7 @@ const Header: FunctionComponent = () => {
                     active: 'bg-slate-50 bg-opacity-10',
                     inactive: '',
                   }}
-                  className='px-3 py-0.5 rounded-lg text-slate-50 font-medium
+                  className='px-3 py-0.5 rounded-lg text-slate-50 font-bold md:font-semibold
                     focus:bg-slate-900 focus:bg-opacity-20'
                   href='/login'
                   size=''
@@ -58,7 +58,7 @@ const Header: FunctionComponent = () => {
                     active: 'bg-slate-50 bg-opacity-10',
                     inactive: '',
                   }}
-                  className='px-3 py-0.5 rounded-lg text-slate-50 font-medium
+                  className='px-3 py-0.5 rounded-lg text-slate-50 font-bold md:font-semibold
                   focus:bg-slate-900 focus:bg-opacity-20'
                   href='/dashboard/'
                   size=''
@@ -68,7 +68,7 @@ const Header: FunctionComponent = () => {
                   Dashboard
                 </DLink>
                 <DButton
-                  className='px-3 py-0.5 rounded-lg text-slate-50 font-medium
+                  className='px-3 py-0.5 rounded-lg text-slate-50 font-bold md:font-semibold
                   focus:bg-slate-900 focus:bg-opacity-20'
                   onClick={() => logOut.mutate()}
                   size=''

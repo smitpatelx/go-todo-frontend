@@ -23,7 +23,7 @@ const useAuth = () => {
     {
       onSettled: () => {
         dispatch(userLogout());
-        if (router.asPath === '/dashboard/') { router.push('/login/'); }
+        if (router.asPath === '/dashboard/') { return router.push('/login/'); }
       },
     },
   );

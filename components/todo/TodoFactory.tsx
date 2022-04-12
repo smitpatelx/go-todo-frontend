@@ -20,7 +20,7 @@ const TodoFactory = ({
   select,
 }: TodoFactoryProps) => (
   <div
-    className='w-full flex flex-wrap items-center bg-sky-100
+    className='w-full flex flex-wrap items-center bg-slate-100
     bg-opacity-10 py-1.5 px-4 rounded shadow-md focus:outline-none
     pointer-events-auto'
     onClick={() => select(id)}
@@ -32,8 +32,8 @@ const TodoFactory = ({
       'w-5/6 text-sm font-medium whitespace-pre-wrap',
       'flex items-start justify-start',
       {
-        'line-through text-sky-400': done,
-        'text-sky-100': !done,
+        'line-through text-slate-400': done,
+        'text-slate-100': !done,
       },
     )}
     >
@@ -41,11 +41,11 @@ const TodoFactory = ({
         className={
           classNames(
             'm-2 mr-4 float-left transition-all',
-            'duration-300 ease-out text-sky-700',
+            'duration-300 ease-out text-slate-700',
             'rounded-full p-1  shadow-inner',
             {
               'bg-white': isSelected,
-              'bg-sky-300': !isSelected,
+              'bg-slate-300': !isSelected,
             },
           )
         }

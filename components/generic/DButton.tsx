@@ -33,8 +33,8 @@ const DButton = forwardRef<HTMLButtonElement, DButtonProps>(({
           : ''),
         className,
         {
-          'bg-sky-800 text-sky-100 focus:ring-sky-500 focus-visible:ring-sky-300 focus:ring-offset-cyan-900': theme === 'primary',
-          'bg-sky-50 text-sky-800 hover:bg-opacity-100 focus:ring-sky-500 focus-visible:ring-sky-500 focus:ring-offset-cyan-900': theme === 'secondary',
+          'bg-slate-800 text-slate-100 focus:ring-sky-500 focus-visible:ring-sky-300 focus:ring-offset-cyan-900': theme === 'primary',
+          'bg-slate-600 text-slate-50 hover:bg-opacity-100 focus:ring-sky-500 focus-visible:ring-sky-500 focus:ring-offset-cyan-900': theme === 'secondary',
           'bg-sky-600 text-sky-100 focus:ring-sky-400 focus-visible:ring-sky-400 focus:ring-offset-cyan-900': theme === 'accent',
 
           'py-1.5 px-3.5 text-sm': size === 'sm',

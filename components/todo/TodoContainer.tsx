@@ -145,132 +145,135 @@ const TodoContainer: FunctionComponent = () => {
   return (
     <Layout>
       <div className='w-screen flex-grow flex flex-col items-center
-       overflow-hidden p-2 md:p-0 flex-wrap justify-start'
+       overflow-hidden flex-wrap justify-start bg-slate-900'
       >
-        <div className='w-full md:max-w-xl bg-sky-900 flex-grow
-        rounded-lg shadow-xl my-auto p-4 md:p-6 h-full max-h-screen
-        md:max-h-[90%] flex flex-col-reverse md:flex-col relative'
+        <div className='w-full h-full flex flex-col items-center
+        overflow-hidden p-2 md:p-0 flex-wrap justify-start mt-16'
         >
-          <div className={classNames(
-            style.inputContainer,
-            'relative pt-2 md:py-2',
-          )}
+          <div className='w-full md:max-w-xl bg-slate-800 flex-grow
+          rounded-lg shadow-xl my-auto p-4 md:p-6 h-full max-h-screen
+          md:max-h-[90%] flex flex-col-reverse md:flex-col relative'
           >
-            <div className='flex flex-wrap'>
-              <div className='w-full flex flex-wrap relative'>
-                <input
-                  autoComplete='off'
-                  autoCorrect='off'
-                  autoSave='off'
-                  className='py-3 px-4'
-                  id='text'
-                  onChange={(e) => setTodoText(e.target.value)}
-                  onKeyDown={handleAddTodo}
-                  placeholder='Add new todo'
-                  type='text'
-                  value={todoText}
-                />
-                <div className='absolute right-3 top-1/2 transform -translate-y-1/2
-                flex flex-wrap justify-end z-20'
-                >
-                  <DButton
-                    className='p-1.5 rounded-full'
-                    onClick={() => addTodo.mutate(todoText)}
-                    size=''
-                    theme='primary'
+            <div className={classNames(
+              style.inputContainer,
+              'relative pt-2 md:py-2',
+            )}
+            >
+              <div className='flex flex-wrap'>
+                <div className='w-full flex flex-wrap relative'>
+                  <input
+                    autoComplete='off'
+                    autoCorrect='off'
+                    autoSave='off'
+                    className='py-3 px-4'
+                    id='text'
+                    onChange={(e) => setTodoText(e.target.value)}
+                    onKeyDown={handleAddTodo}
+                    placeholder='Add new todo'
+                    type='text'
+                    value={todoText}
+                  />
+                  <div className='absolute right-3 top-1/2 transform -translate-y-1/2
+                  flex flex-wrap justify-end z-20'
                   >
-                    <DIcon className='w-5 h-5' icon={mdiPlus} />
+                    <DButton
+                      className='p-1.5 rounded-full'
+                      onClick={() => addTodo.mutate(todoText)}
+                      size=''
+                      theme='primary'
+                    >
+                      <DIcon className='w-5 h-5' icon={mdiPlus} />
+                    </DButton>
+                  </div>
+                </div>
+              </div>
+              <div className='overflow-x-auto flex flex-nowrap flex-row
+                overflow-y-hidden w-full scroll-hidden place-content-start p-2'
+              >
+                <div className='mr-2 flex-shrink-0'>
+                  <DButton
+                    onClick={() => handleSelectAll()}
+                    size='sm'
+                    theme='secondary'
+                  >
+                    <span>Select All</span>
+                  </DButton>
+                </div>
+                <div className='mr-2 flex-shrink-0'>
+                  <DButton
+                    className='hover:bg-red-400'
+                    onClick={() => handleDeleteTodos(selectedTodos)}
+                    size='sm'
+                    theme='secondary'
+                  >
+                    <span>Delete</span>
+                    <DIcon className='w-4 h-4 ml-2' icon={mdiDelete} />
+                  </DButton>
+                </div>
+                <div className='mr-2 flex-shrink-0'>
+                  <DButton
+                    onClick={() => handleMarkAsDone(selectedTodos)}
+                    size='sm'
+                    theme='secondary'
+                  >
+                    <span>Done</span>
+                    <DIcon className='w-4 h-4 ml-2' icon={mdiCheck} />
+                  </DButton>
+                </div>
+                <div className='mr-2 flex-shrink-0'>
+                  <DButton
+                    onClick={() => handleMarkAsIncomplete(selectedTodos)}
+                    size='sm'
+                    theme='secondary'
+                  >
+                    <span>Incomplete</span>
+                    <DIcon className='w-4 h-4 ml-2' icon={mdiClose} />
                   </DButton>
                 </div>
               </div>
             </div>
-            <div className='overflow-x-auto flex flex-nowrap flex-row
-              overflow-y-hidden w-full scroll-hidden place-content-start p-2'
-            >
-              <div className='mr-2 flex-shrink-0'>
-                <DButton
-                  className='hover:bg-red-400'
-                  onClick={() => handleSelectAll()}
-                  size='sm'
-                  theme='accent'
-                >
-                  <span>Select All</span>
-                </DButton>
-              </div>
-              <div className='mr-2 flex-shrink-0'>
-                <DButton
-                  className='hover:bg-red-400'
-                  onClick={() => handleDeleteTodos(selectedTodos)}
-                  size='sm'
-                  theme='accent'
-                >
-                  <span>Delete</span>
-                  <DIcon className='w-4 h-4 ml-2' icon={mdiDelete} />
-                </DButton>
-              </div>
-              <div className='mr-2 flex-shrink-0'>
-                <DButton
-                  onClick={() => handleMarkAsDone(selectedTodos)}
-                  size='sm'
-                  theme='accent'
-                >
-                  <span>Done</span>
-                  <DIcon className='w-4 h-4 ml-2' icon={mdiCheck} />
-                </DButton>
-              </div>
-              <div className='mr-2 flex-shrink-0'>
-                <DButton
-                  onClick={() => handleMarkAsIncomplete(selectedTodos)}
-                  size='sm'
-                  theme='accent'
-                >
-                  <span>Incomplete</span>
-                  <DIcon className='w-4 h-4 ml-2' icon={mdiClose} />
-                </DButton>
-              </div>
-            </div>
-          </div>
 
-          <div className='w-full flex-grow mb-1 md:mb-0 overflow-x-hidden
-            overflow-y-auto flex flex-col p-1'
-          >
-            <motion.ul
-              animate='show'
-              initial='hidden'
-              variants={{
-                hidden: { opacity: 0 },
-                show: {
-                  opacity: 1,
-                  transition: {
-                    delayChildren: 0.5,
-                  },
-                },
-              }}
+            <div className='w-full flex-grow mb-1 md:mb-0 overflow-x-hidden
+              overflow-y-auto flex flex-col p-1'
             >
-              {todoArray?.length > 0
-                && todoArray.map((todoX: Todo) => (
-                  <motion.li
-                    key={todoX.id}
-                    className='mb-2 pointer-events-none focus:touch-none focus:appearance-none
-                      select-none'
-                    title={new Date(todoX.created_at).toLocaleString()}
-                    variants={{
-                      hidden: { opacity: 0, x: '100%' },
-                      show: { opacity: 1, x: '0%' },
-                      exit: { opacity: 0, x: '100%' },
-                    }}
-                  >
-                    <span className='text-sm text-white'>{selectedTodos.includes(todoX)}</span>
-                    <TodoFactory
-                      done={todoX.done}
-                      id={todoX.id}
-                      isSelected={isSelected(todoX.id)}
-                      select={handleSelect}
-                      text={todoX.text}
-                    />
-                  </motion.li>
-                ))}
-            </motion.ul>
+              <motion.ul
+                animate='show'
+                initial='hidden'
+                variants={{
+                  hidden: { opacity: 0 },
+                  show: {
+                    opacity: 1,
+                    transition: {
+                      delayChildren: 0.5,
+                    },
+                  },
+                }}
+              >
+                {todoArray?.length > 0
+                  && todoArray.map((todoX: Todo) => (
+                    <motion.li
+                      key={todoX.id}
+                      className='mb-2 pointer-events-none focus:touch-none focus:appearance-none
+                        select-none'
+                      title={new Date(todoX.created_at).toLocaleString()}
+                      variants={{
+                        hidden: { opacity: 0, x: '100%' },
+                        show: { opacity: 1, x: '0%' },
+                        exit: { opacity: 0, x: '100%' },
+                      }}
+                    >
+                      <span className='text-sm text-white'>{selectedTodos.includes(todoX)}</span>
+                      <TodoFactory
+                        done={todoX.done}
+                        id={todoX.id}
+                        isSelected={isSelected(todoX.id)}
+                        select={handleSelect}
+                        text={todoX.text}
+                      />
+                    </motion.li>
+                  ))}
+              </motion.ul>
+            </div>
           </div>
         </div>
       </div>

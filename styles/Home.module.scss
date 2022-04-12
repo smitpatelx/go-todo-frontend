@@ -1,10 +1,10 @@
 .bgImage {
-  background-image: url('/images/bg2-blured-min.jpg');
-  background-color: rgb(224 251 252);
+  // background-image: url('/images/bg2-blured-min.jpg');
+  // background-color: rgb(255, 255, 255);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  
+  @apply bg-slate-900;
   // @media (min-width: 640px) {
   //   background-image: url('/images/bg-blured-min.jpg');
   // }
