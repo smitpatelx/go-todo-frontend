@@ -4,11 +4,18 @@ import DLink from '@/components/generic/DLink';
 import useAuth from '@/lib/useAuth';
 import { isEmptyObj } from '@/lib/misc';
 import SpxImage from '@/components/generic/SpxImage';
+import useLogout from '@/lib/logout';
+import { useRouter } from 'next/router';
+import { useDispatch } from 'react-redux';
 import DButton from '../generic/DButton';
 import HeaderMenu from './HeaderMenu';
 
 const Header: FunctionComponent = () => {
-  const { userFromStore, logOut } = useAuth();
+  const { userFromStore } = useAuth();
+  const router = useRouter();
+  const dispatch = useDispatch();
+
+  const handleLogout = useLogout(router, dispatch);
 
   const avatarUrl = useMemo(() => {
     if (userFromStore?.avatarUrl) {
@@ -71,7 +78,7 @@ const Header: FunctionComponent = () => {
                 <DButton
                   className='px-3 py-0.5 rounded-lg text-slate-50 font-bold md:font-semibold
                   focus:bg-slate-900 focus:bg-opacity-20'
-                  onClick={() => logOut.mutate()}
+                  onClick={() => handleLogout.mutate()}
                   size=''
                   theme=''
                   title='Logout'
@@ -95,7 +102,7 @@ const Header: FunctionComponent = () => {
                 <HeaderMenu
                   avatarUrl={avatarUrl}
                   left
-                  logout={logOut.mutate}
+                  logout={() => handleLogout.mutate()}
                   maxWidthClass='w-screen -mr-4'
                 />
               </div>

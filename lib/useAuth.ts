@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useMutation } from 'react-query';
 import { useDispatch, useSelector } from 'react-redux';
+import useLogout from './logout';
 import { isEmptyObj } from './misc';
 import routes from './routes';
 
@@ -15,21 +16,7 @@ const useAuth = () => {
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const handleLouOutCallback = () => {
-    dispatch(userLogout());
-    if (router.asPath === '/dashboard/') { return router.push('/login/'); }
-    return undefined;
-  };
-
-  const logOut = useMutation(
-    async () => {
-      const res = await AuthApi.postLogout();
-      return res;
-    },
-    {
-      onSettled: async () => handleLouOutCallback(),
-    },
-  );
+  const logOut = useLogout(router, dispatch);
 
   const handleUrlAuth = (url: string, userX = userFromStore) => {
     const currentRoute = routes.find((x) => x.pathname === url);
