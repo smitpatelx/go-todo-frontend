@@ -12,7 +12,7 @@ const useLogout = (router: NextRouter, dispatch: Dispatch<unknown>) => useMutati
   {
     onSettled: async () => {
       dispatch(userLogout());
-      if (router.asPath === '/dashboard/') {
+      if (router.asPath === '/dashboard/' || router.asPath === '/dashboard') {
         await router.push('/login/');
       }
       return null;
