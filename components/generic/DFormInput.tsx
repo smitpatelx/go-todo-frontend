@@ -1,6 +1,8 @@
-import { FunctionComponent } from 'react';
+import React from 'react';
+import { Field, ErrorMessage, ErrorMessageProps } from 'formik';
 import style from '@/styles/Forms.module.scss';
-import { Field, ErrorMessage } from 'formik';
+
+const EM = ErrorMessage as React.FC<ErrorMessageProps>;
 
 type DFormInputProps = {
   type: string,
@@ -10,7 +12,7 @@ type DFormInputProps = {
   autoComplete: string,
 };
 
-const DFormInput: FunctionComponent<DFormInputProps> = ({
+const DFormInput = ({
   type,
   id,
   label,
@@ -26,9 +28,9 @@ const DFormInput: FunctionComponent<DFormInputProps> = ({
       placeholder={placeholder}
       type={type}
     />
-    <ErrorMessage name={id}>
+    <EM name={id}>
       {(msg) => <div className={style.error}>{msg}</div>}
-    </ErrorMessage>
+    </EM>
   </div>
 );
 

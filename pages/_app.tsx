@@ -17,23 +17,26 @@ const queryClient = new QueryClient({
   },
 });
 
-const MyApp = ({ Component, pageProps }: AppProps) => (
-  <Provider store={store}>
-    <QueryClientProvider client={queryClient}>
-      <div className={classNames(style.bgImage, 'h-full')}>
-        <div className='flex flex-wrap flex-col h-full'>
-          <Header />
-          <AnimatePresence
-            exitBeforeEnter
-            initial={false}
-          >
-            {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-            <Component {...pageProps} />
-          </AnimatePresence>
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  const ComponentX = Component as React.FC;
+  return (
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <div className={classNames(style.bgImage, 'h-full')}>
+          <div className='flex flex-wrap flex-col h-full'>
+            <Header />
+            <AnimatePresence
+              exitBeforeEnter
+              initial={false}
+            >
+              {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+              <ComponentX {...pageProps} />
+            </AnimatePresence>
+          </div>
         </div>
-      </div>
-    </QueryClientProvider>
-  </Provider>
-);
+      </QueryClientProvider>
+    </Provider>
+  );
+};
 
 export default MyApp;
