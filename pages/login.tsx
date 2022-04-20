@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import DLink from '@/components/generic/DLink';
-import Image from 'next/image';
+import SpxImage from '@/components/generic/SpxImage';
 import Layout from '../components/navigation/Layout';
 
 const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || '';
@@ -40,7 +40,7 @@ const LoginPage: NextPage = () => (
         </div>
 
         <div className='w-1/2 relative hidden md:flex flex-wrap'>
-          <Image
+          <SpxImage
             alt='Todo'
             className='w-full h-full'
             layout='fill'
@@ -51,7 +51,7 @@ const LoginPage: NextPage = () => (
           />
         </div>
         <div className='w-full flex-1 md:flex-none relative flex md:hidden flex-wrap'>
-          <Image
+          <SpxImage
             alt='Todo'
             className='w-full h-full'
             layout='fill'

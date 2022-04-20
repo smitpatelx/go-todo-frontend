@@ -1,6 +1,6 @@
 import type { FunctionComponent } from 'react';
-import Image from 'next/image';
 import Head from 'next/head';
+import SpxImage from '@/components/generic/SpxImage';
 
 type DErrorProps = {
   title: string,
@@ -24,7 +24,7 @@ const DError: FunctionComponent<DErrorProps> = ({
       <div className='py-6 md:pt-20 md:pb-8 flex flex-wrap items-center
             justify-center md:justify-start w-full md:-ml-12'
       >
-        <Image
+        <SpxImage
           alt='Welcome'
           height={240}
           src='/images/error.svg'

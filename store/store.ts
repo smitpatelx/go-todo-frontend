@@ -1,13 +1,13 @@
 import { configureStore, PreloadedState } from '@reduxjs/toolkit';
 import type { StateFromReducersMapObject } from '@reduxjs/toolkit';
 import authSlice from './slices/authSlice';
-import { loadState, saveState } from './modules/localstorage';
+// import { loadState, saveState } from './modules/localstorage';
 
 const reducer = {
   auth: authSlice,
 };
 
-const preloadedState: PreloadedState<StateFromReducersMapObject<typeof reducer>> = loadState();
+// const preloadedState: PreloadedState<StateFromReducersMapObject<typeof reducer>> = loadState();
 
 const store = configureStore({
   reducer,

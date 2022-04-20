@@ -1,7 +1,7 @@
 import { Popover, Transition } from '@headlessui/react';
 import { mdiHome, mdiLogout, mdiViewDashboard } from '@mdi/js';
 import classNames from 'classnames';
-import Image from 'next/image';
+import SpxImage from '@/components/generic/SpxImage';
 import DButton from '../generic/DButton';
 import DIcon from '../generic/DIcon';
 import DLink from '../generic/DLink';
@@ -55,7 +55,7 @@ const HeaderMenu = ({
               className='rounded-full bg-slate-50 shadow-lg overflow-hidden
               h-9 w-9 pointer-events-none'
             >
-              <Image
+              <SpxImage
                 alt='User'
                 className='rounded-full bg-slate-50 pointer-events-none'
                 height={45}

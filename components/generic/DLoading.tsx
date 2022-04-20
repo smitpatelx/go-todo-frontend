@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import { FunctionComponent } from 'react';
 import classNames from 'classnames';
-import Image from 'next/image';
 import Lottie from 'react-lottie';
 import * as SpaceMan from '@/public/lottie-animation/space-anim.json';
+import SpxImage from '@/components/generic/SpxImage';
 
 const DLoading: FunctionComponent = () => (
   <>
@@ -18,7 +18,7 @@ const DLoading: FunctionComponent = () => (
       <div className='bg-transparent rounded-2xl text-center flex flex-wrap flex-col
         items-center flip-horizontal-bottom text-2xl font-bold text-slate-100'
       >
-        <Image
+        <SpxImage
           alt='TODO'
           className='animate-pulse duration-500'
           height={100}

@@ -4,7 +4,7 @@ import Head from 'next/head';
 import DLink from '@/components/generic/DLink';
 import { mdiChevronRight } from '@mdi/js';
 import DIcon from '@/components/generic/DIcon';
-import Image from 'next/image';
+import SpxImage from '@/components/generic/SpxImage';
 
 const Home: NextPage = () => (
   <Layout>
@@ -48,7 +48,7 @@ const Home: NextPage = () => (
         </div>
 
         <div className='w-1/2 relative hidden md:flex flex-wrap'>
-          <Image
+          <SpxImage
             alt='Todo'
             className='w-full h-full'
             layout='fill'
@@ -59,7 +59,7 @@ const Home: NextPage = () => (
           />
         </div>
         <div className='w-full flex-1 md:flex-none relative flex md:hidden flex-wrap'>
-          <Image
+          <SpxImage
             alt='Todo'
             className='w-full h-full'
             layout='fill'

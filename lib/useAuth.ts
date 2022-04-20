@@ -27,8 +27,7 @@ const useAuth = () => {
       return res;
     },
     {
-      onSuccess: handleLouOutCallback,
-      onError: handleLouOutCallback,
+      onSettled: async () => handleLouOutCallback(),
     },
   );
 

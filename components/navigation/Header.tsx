@@ -1,8 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import { FunctionComponent, useMemo } from 'react';
 import DLink from '@/components/generic/DLink';
-import Image from 'next/image';
 import useAuth from '@/lib/useAuth';
 import { isEmptyObj } from '@/lib/misc';
+import SpxImage from '@/components/generic/SpxImage';
 import DButton from '../generic/DButton';
 import HeaderMenu from './HeaderMenu';
 
@@ -21,7 +22,7 @@ const Header: FunctionComponent = () => {
       <div className='w-full container mx-auto flex flex-wrap items-center justify-between px-4 md:px-0'>
         <div>
           <DLink href='/' title='Home'>
-            <Image
+            <SpxImage
               height={60}
               src='/images/blue-logo-transparent-w.svg'
               width={80}
@@ -81,11 +82,10 @@ const Header: FunctionComponent = () => {
                   className='rounded-full bg-slate-50 shadow-lg overflow-hidden
                   h-9 w-9'
                 >
-                  <Image
+                  <img
                     alt='User'
                     className='rounded-full bg-slate-50'
                     height={45}
-                    layout='responsive'
                     src={avatarUrl}
                     width={45}
                   />
