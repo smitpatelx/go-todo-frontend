@@ -1,8 +1,6 @@
 import React from 'react';
-import { Field, ErrorMessage, ErrorMessageProps } from 'formik';
+import { Field, ErrorMessage } from 'formik';
 import style from '@/styles/Forms.module.scss';
-
-const EM = ErrorMessage as React.FC<ErrorMessageProps>;
 
 type DFormInputProps = {
   type: string,
@@ -28,9 +26,9 @@ const DFormInput = ({
       placeholder={placeholder}
       type={type}
     />
-    <EM name={id}>
+    <ErrorMessage name={id}>
       {(msg) => <div className={style.error}>{msg}</div>}
-    </EM>
+    </ErrorMessage>
   </div>
 );
 
