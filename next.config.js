@@ -5,6 +5,15 @@ const nextConfig = {
   images: {
     domains: ['lh3.googleusercontent.com']
   },
+  async redirects() {
+    return [
+      {
+        source: '/auth_callback/',
+        destination: '/dashboard/',
+        permanent: false,
+      }
+    ]
+  },
 }
 
 module.exports = nextConfig
