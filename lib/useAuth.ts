@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
 import AuthApi from '@/api/auth';
 import User from '@/interface/user';
-import { setUser, userLogout } from '@/store/slices/authSlice';
+import { setUser } from '@/store/slices/authSlice';
 import { StoreStateType } from '@/store/store';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';

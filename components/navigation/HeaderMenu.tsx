@@ -45,7 +45,6 @@ const HeaderMenu = ({
     },
   ];
 
-  
   return (
     <Popover className='relative'>
       {({ open }) => (
