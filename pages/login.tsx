@@ -2,8 +2,8 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import DLink from '@/components/generic/DLink';
 import SpxImage from '@/components/generic/SpxImage';
-import Layout from '../components/navigation/Layout';
 import GuestRequired from '@/components/navigation/GuestRequired';
+import Layout from '../components/navigation/Layout';
 
 const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || '';
 
@@ -13,7 +13,7 @@ const LoginPage: NextPage = () => (
       <Head>
         <title>Todo | Login Page</title>
       </Head>
-    
+
       <div className='w-full h-full flex-grow bg-slate-900'>
         <div className='w-full h-full flex flex-col-reverse md:flex-row place-content-between'>
           <div className='w-full md:w-1/2 flex flex-col py-24 pl-8 md:pl-20 items-start place-content-center'>
@@ -40,7 +40,7 @@ const LoginPage: NextPage = () => (
               </DLink>
             </div>
           </div>
-    
+
           <div className='w-1/2 relative hidden md:flex flex-wrap'>
             <SpxImage
               alt='Todo'

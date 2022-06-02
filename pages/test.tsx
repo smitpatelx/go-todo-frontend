@@ -1,4 +1,5 @@
 import DLoading from '@/components/generic/DLoading';
+import GuestRequired from '@/components/navigation/GuestRequired';
 import React from 'react';
 
 const Test = () => (

@@ -35,7 +35,7 @@ const Home: NextPage = () => (
                 smitpatelx.com
               </DLink>
             </h3>
-    
+
             <div className='w-full flex items-center justify-start mt-10 py-2 pl-3 md:pl-6'>
               <DLink
                 href='/login/'
@@ -48,7 +48,7 @@ const Home: NextPage = () => (
               </DLink>
             </div>
           </div>
-    
+
           <div className='w-1/2 relative hidden md:flex flex-wrap'>
             <SpxImage
               alt='Todo'
