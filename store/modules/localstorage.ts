@@ -2,6 +2,7 @@ import AES from 'crypto-js/aes';
 import CryptoJsEncode from 'crypto-js/enc-utf8';
 import type { StoreStateType } from '../store';
 
+const SECRET = process.env.NEXT_PUBLIC_AES_SECRET as string ?? 'secret';
 /* eslint-disable */
 export const loadState = (): StoreStateType => {
   try {
@@ -10,7 +11,7 @@ export const loadState = (): StoreStateType => {
     }
     const serializedState = AES.decrypt(
       localStorage.getItem('state') as string,
-      process.env.NEXT_PUBLIC_AES_SECRET as string,
+      SECRET,
     ).toString(CryptoJsEncode);
 
     if (serializedState === null) {
@@ -26,7 +27,7 @@ export const saveState = (state: unknown): void => {
   try {
     const serializedState = AES.encrypt(
       JSON.stringify(state),
-      process.env.NEXT_PUBLIC_AES_SECRET as string,
+      SECRET,
     );
     localStorage.setItem('state', String(serializedState));
   } catch { }
