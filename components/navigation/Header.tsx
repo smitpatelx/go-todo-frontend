@@ -2,7 +2,6 @@
 import { FunctionComponent, useMemo } from 'react';
 import DLink from '@/components/generic/DLink';
 import useAuth from '@/lib/useAuth';
-import { isEmptyObj } from '@/lib/misc';
 import SpxImage from '@/components/generic/SpxImage';
 import useLogout from '@/lib/logout';
 import { useRouter } from 'next/router';
@@ -11,18 +10,18 @@ import DButton from '../generic/DButton';
 import HeaderMenu from './HeaderMenu';
 
 const Header: FunctionComponent = () => {
-  const { userFromStore } = useAuth();
+  const { loggedInUser, authorized } = useAuth();
   const router = useRouter();
   const dispatch = useDispatch();
 
   const handleLogout = useLogout(router, dispatch);
 
   const avatarUrl = useMemo(() => {
-    if (userFromStore?.avatarUrl) {
-      return userFromStore.avatarUrl;
+    if (loggedInUser?.avatarUrl) {
+      return loggedInUser.avatarUrl;
     }
     return '';
-  }, [userFromStore?.avatarUrl]);
+  }, [loggedInUser?.avatarUrl]);
 
   return (
     <div className='w-full bg-slate-800 bg-opacity-40 backdrop-blur-lg z-50 fixed top-0 left-0'>
@@ -38,7 +37,7 @@ const Header: FunctionComponent = () => {
         </div>
         <div className='flex flex-wrap gap-x-3 items-center justify-center'>
           {
-            isEmptyObj(userFromStore) && (
+            !authorized && (
               <div>
                 <DLink
                   activeClass={{
@@ -58,7 +57,7 @@ const Header: FunctionComponent = () => {
             )
           }
           {
-          !isEmptyObj(userFromStore) && (
+          authorized && (
             <div>
               <div className='hidden md:flex'>
                 <DLink

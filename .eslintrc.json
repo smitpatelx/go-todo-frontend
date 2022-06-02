@@ -9,6 +9,7 @@
   ],
   "root": true,
   "rules": {
+    "max-len": "off",
     "import/no-unresolved": "error",
     "quotes": [
       "error",

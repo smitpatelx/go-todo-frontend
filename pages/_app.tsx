@@ -1,12 +1,9 @@
-import classNames from 'classnames';
-import { AnimatePresence } from 'framer-motion';
 import type { AppProps } from 'next/app';
 import '../styles/globals.scss';
-import { QueryClient, QueryClientProvider } from 'react-query';
 import store from '@/store/store';
 import { Provider } from 'react-redux';
-import Header from '@/components/navigation/Header';
-import style from '../styles/Home.module.scss';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import ProviderWrapper from '@/components/generic/ProviderWrapper';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,18 +19,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
-        <div className={classNames(style.bgImage, 'h-full')}>
-          <div className='flex flex-wrap flex-col h-full'>
-            <Header />
-            <AnimatePresence
-              exitBeforeEnter
-              initial={false}
-            >
-              {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-              <ComponentX {...pageProps} />
-            </AnimatePresence>
-          </div>
-        </div>
+        <ProviderWrapper>
+          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+          <ComponentX {...pageProps} />
+        </ProviderWrapper>
       </QueryClientProvider>
     </Provider>
   );
