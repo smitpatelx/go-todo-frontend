@@ -37,6 +37,12 @@ const useAuthGuard = () => {
   );
 
   useEffect(() => {
+    if (authorized) return;
+    getUser.mutate();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     const isGuestRequired = GUEST_ROUTES.some((routePath) => routePath === router.asPath);
     // When user is authorized
     if (authorized && isGuestRequired && router.asPath !== '/dashboard/') {
@@ -45,12 +51,6 @@ const useAuthGuard = () => {
       router.push('/login/');
     }
   });
-
-  // useEffect(() => {
-  //   if (!authorized) return;
-  //   getUser.mutate();
-  // // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
 };
 
 export default useAuthGuard;
